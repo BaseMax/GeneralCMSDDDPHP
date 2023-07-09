@@ -13,7 +13,7 @@ $migrationClasses = [
     CMS\Database\Migrations\MenuPositionMigration::class,
     CMS\Database\Migrations\CategoryMigration::class,
     CMS\Database\Migrations\SliderSlideMigration::class,
-    CMS\Database\Migrations\MenuItemMigration::class,//
+    CMS\Database\Migrations\MenuItemMigration::class,
     CMS\Database\Migrations\UserMigration::class,
     CMS\Database\Migrations\UserPremMigration::class,
     CMS\Database\Migrations\PostMigration::class,

@@ -70,6 +70,118 @@ This PHP RESTful service based on the DDD architecture provides a structured app
 
 Feel free to explore the code and adapt it to your specific requirements.
 
+## Database
+
+```sql
+CREATE TABLE posts (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  title VARCHAR(255) NOT NULL,
+  slug VARCHAR(255) NOT NULL,
+  content TEXT NOT NULL,
+  fullcontent TEXT,
+  createdat DATETIME NOT NULL,
+  updatedat DATETIME,
+  author INT,
+  FOREIGN KEY (author) REFERENCES users(id)
+);
+
+CREATE TABLE users (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  username VARCHAR(255) NOT NULL,
+  hash_password VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  firstname VARCHAR(255),
+  lastname VARCHAR(255),
+  name VARCHAR(255),
+  role_id INT,
+  FOREIGN KEY (role_id) REFERENCES roles(id)
+);
+
+CREATE TABLE user_prems (
+  user_id INT,
+  key VARCHAR(255),
+  value TINYINT,
+  PRIMARY KEY (user_id, key),
+  FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+CREATE TABLE slider_positions (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  name VARCHAR(255) NOT NULL,
+  slug VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE slider_slides (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  slider_position_id INT NOT NULL,
+  image VARCHAR(255) NOT NULL,
+  title VARCHAR(255) NOT NULL,
+  description TEXT,
+  link VARCHAR(255),
+  FOREIGN KEY (slider_position_id) REFERENCES slider_positions(id)
+);
+
+CREATE TABLE tags (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  text VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE post_tags (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  post_id INT NOT NULL,
+  tag_id INT NOT NULL,
+  FOREIGN KEY (post_id) REFERENCES posts(id),
+  FOREIGN KEY (tag_id) REFERENCES tags(id)
+);
+
+CREATE TABLE contactus (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  first_name VARCHAR(255) NOT NULL,
+  last_name VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  tel VARCHAR(255) NOT NULL,
+  text TEXT NOT NULL
+);
+
+CREATE TABLE faq (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  question VARCHAR(255) NOT NULL,
+  answer TEXT NOT NULL
+);
+
+CREATE TABLE menu_positions (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  name VARCHAR(255) NOT NULL,
+  slug VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE menu_items (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  menu_position_id INT NOT NULL,
+  name VARCHAR(255) NOT NULL,
+  link VARCHAR(255) NOT NULL,
+  parent_id INT,
+  FOREIGN KEY (menu_position_id) REFERENCES menu_positions(id),
+  FOREIGN KEY (parent_id) REFERENCES menu_items(id)
+);
+
+CREATE TABLE categories (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  name VARCHAR(255) NOT NULL,
+  slug VARCHAR(255) NOT NULL,
+  parent_id INT,
+  FOREIGN KEY (parent_id) REFERENCES categories(id)
+);
+
+CREATE TABLE post_categories (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  post_id INT NOT NULL,
+  category_id INT NOT NULL,
+  FOREIGN KEY (post_id) REFERENCES posts(id),
+  FOREIGN KEY (category_id) REFERENCES categories(id)
+);
+```
+
 ------------
 
 - posts (id, title, slug, content, fullcontent, createdat, updatedat, author)

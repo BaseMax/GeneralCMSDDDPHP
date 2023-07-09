@@ -1,0 +1,17 @@
+{
+    "name": "max/general-cmsdddphp",
+    "autoload": {
+        "psr-4": {
+            "CMS\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ali Ahmadi",
+            "email": "aliahmadi.github@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.5"
+    }
+}

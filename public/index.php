@@ -15,6 +15,6 @@ $request = CMS\Http\Request::createFromGlobals();
 
 $kernel = new CMS\Http\Kernel();
 
-$response = $kernel->handle($request);
+$response = $kernel->handler($request);
 
 $response->send();

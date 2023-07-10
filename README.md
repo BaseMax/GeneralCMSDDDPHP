@@ -221,4 +221,5 @@ CREATE TABLE post_categories (
 - menu_items (id, menu_position_id, name, link, parent_id=null)
 - categories (id, name, slug, parent_id=null)
 - post_cagegoties (id, post_id, category_id)
-- 
+
+Copyright 2023, Max Base

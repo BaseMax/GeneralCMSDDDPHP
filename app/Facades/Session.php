@@ -1,6 +1,6 @@
 <?php
 
-namespace CMS\Http\Facades;
+namespace CMS\Facades;
 
 class Session extends Facade
 {

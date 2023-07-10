@@ -1,9 +1,9 @@
 <?php
 
-namespace CMS\Http\Facades;
+namespace CMS\Facades;
 
-use \Twig\Environment;
-use \Twig\Loader\FilesystemLoader;
+use Twig\Environment;
+use Twig\Loader\FilesystemLoader;
 
 class View extends Facade
 {

@@ -24,7 +24,6 @@ class UserMigration extends Migration
                     email VARCHAR(255) NOT NULL,
                     firstname VARCHAR(255),
                     lastname VARCHAR(255),
-                    name VARCHAR(255),
                     role_id INT
                   );"
             );

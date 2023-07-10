@@ -21,7 +21,7 @@ class View extends Facade
     {
         return (new static(
             new FilesystemLoader(VIEW_PATH)
-        ))->loader($file_name, $variables);
+        ))->loader($file_name . ".twig", $variables);
     }
 
     private function loader(string $file_name, array $variables = []): string

@@ -54,7 +54,7 @@ class Kernel
             // return $action();
             return $Response;
         } catch (Exception $e) {
-            return new Response($e->getMessage(), 500);
+            return new Response(include VIEW_PATH . "/_505.php", 500);
         }
     }
 }

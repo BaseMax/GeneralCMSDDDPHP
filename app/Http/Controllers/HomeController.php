@@ -2,10 +2,13 @@
 
 namespace CMS\Http\Controllers;
 
+use CMS\Http\Facades\View;
+
 class HomeController extends Controller
 {
     public function index()
     {
-        return "hello";
+        // dd("hello");
+        return View::render("test.twig");
     }
 }

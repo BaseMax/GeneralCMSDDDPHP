@@ -35,7 +35,7 @@ class Kernel
                 $handler = $routeInfo[1];
                 $vars = $routeInfo[2];
                 $instance = new $handler[0];
-                return new Response(call_user_func_array([$instance, $handler[1]], $vars));
+                return new Response(call_user_func_array([$instance, $handler[1]], [$request, ...$vars]));
 
             default:
                 return new Response();

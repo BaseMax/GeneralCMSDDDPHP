@@ -1,56 +1,89 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>CMS Main Page</title>
+    <title>Website Main Page</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
         }
         .navbar {
             background-color: #333;
             color: #fff;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         .navbar-brand {
             font-size: 24px;
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
         }
-        .content {
+        .navbar-nav .nav-link {
+            color: #fff;
+            margin-right: 15px;
+            text-decoration: none;
+        }
+        .container {
             max-width: 800px;
             margin: 0 auto;
             padding: 40px;
         }
         h1 {
-            font-size: 28px;
+            font-size: 32px;
+            color: #333;
             margin-bottom: 30px;
         }
         p {
+            font-size: 18px;
+            color: #666;
             margin-bottom: 20px;
         }
-        .btn-primary {
-            background-color: #4CAF50;
-            border-color: #4CAF50;
-            margin-right: 10px;
+        .cta-buttons {
+            margin-top: 30px;
         }
-        .btn-primary:hover {
+        .cta-buttons a {
+            display: inline-block;
+            padding: 12px 24px;
+            margin-right: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border-radius: 4px;
+            font-size: 16px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .cta-buttons a:hover {
             background-color: #45a049;
-            border-color: #45a049;
         }
     </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="container">
-            <a class="navbar-brand" href="#">CMS</a>
+            <a class="navbar-brand" href="#">Website</a>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/register">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/faq">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">Contact</a>
+                </li>
+            </ul>
         </div>
     </nav>
 
-    <div class="content">
-        <h1>Welcome to the CMS</h1>
-        <p>This is the main page of the CMS. You can start managing your content from here.</p>
-        <div>
-            <a href="/login" class="btn btn-primary">Login</a>
-            <a href="/register" class="btn btn-primary">Register</a>
-        </div>
+    <div class="container">
+        <h1>Welcome to Our Website</h1>
+        <p>This is the main page of our website. Explore our content and features.</p>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js"></script>

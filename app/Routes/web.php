@@ -7,5 +7,6 @@ use CMS\Http\Controllers\HomeController;
 return [
     ["GET", "/", [HomeController::class, "index"]],
     ["GET", "/register", [AuthController::class, "register"]],
-    ["GET", "/login", [AuthController::class, "login"]]
+    ["GET", "/login", [AuthController::class, "login"]],
+    ["POST", "/register", [AuthController::class, "store"]]
 ];

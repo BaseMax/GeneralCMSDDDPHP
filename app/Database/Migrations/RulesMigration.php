@@ -4,9 +4,9 @@ namespace CMS\Database\Migrations;
 
 use Exception;
 
-class UserPremMigration extends Migration
+class RulesMigration extends Migration
 {
-    private string $table_name = "user_prems";
+    private string $table_name = "rules";
 
     public function __construct()
     {
@@ -18,15 +18,14 @@ class UserPremMigration extends Migration
         try {
             $stmt = $this->getDB()->prepare(
                 "CREATE TABLE IF NOT EXISTS " . $this->getTableName() . " (
-                    user_id INT,
-                    `key` VARCHAR(255),
-                    `value` TINYINT,
-                    PRIMARY KEY (user_id, `key`),
-                    FOREIGN KEY (user_id) REFERENCES users(id)
+                    `id` INT PRIMARY KEY AUTO_INCREMENT,
+                    `value` VARCHAR(255)
                   );"
             );
 
             $stmt->execute();
+
+            $this->add_rules();
 
         } catch (Exception $e) {
             throw new Exception($e->getMessage());
@@ -36,5 +35,16 @@ class UserPremMigration extends Migration
     public function getTableName(): string
     {
         return $this->table_name;
+    }
+
+    private function add_rules(): void
+    {
+        // writer, user, admin
+
+        $stmt = $this->getDB()->prepare(
+            "INSERT INTO " . $this->getTableName() . " (`value`) VALUES ('admin'), ('writer'), ('user');"
+        );
+
+        $stmt->execute();
     }
 }

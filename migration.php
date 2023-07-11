@@ -15,7 +15,7 @@ $migrationClasses = [
     CMS\Database\Migrations\SliderSlideMigration::class,
     CMS\Database\Migrations\MenuItemMigration::class,
     CMS\Database\Migrations\UserMigration::class,
-    CMS\Database\Migrations\UserPremMigration::class,
+    CMS\Database\Migrations\RulesMigration::class,
     CMS\Database\Migrations\PostMigration::class,
     CMS\Database\Migrations\PostTagMigration::class,
     CMS\Database\Migrations\PostCategoryMigration::class

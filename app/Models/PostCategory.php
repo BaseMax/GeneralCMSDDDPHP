@@ -12,6 +12,15 @@ class PostCategory extends Model
     {
     }
 
+    public static function create(
+        int $post_id,
+        int $category_id
+    ): static {
+        return (new static())
+            ->setPostId($post_id)
+            ->setCategoryId($category_id);
+    }
+
     public function getId(): int
     {
         return $this->id;

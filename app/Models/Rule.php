@@ -9,7 +9,13 @@ class Rule extends Model
 
     public function __construct()
     {
+    }
 
+    public static function create(
+        string $value
+    ): static {
+        return (new static())
+            ->setValue($value);
     }
 
     public function getId(): int

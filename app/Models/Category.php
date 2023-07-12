@@ -9,6 +9,21 @@ class Category extends Model
     private string $slug;
     private int $parent_id;
 
+    public function __construct()
+    {
+    }
+
+    public static function create(
+        string $name,
+        string $slug,
+        int $parent_id
+    ): static {
+        return (new static())
+            ->setName($name)
+            ->setSlug($slug)
+            ->setParentId($parent_id);
+    }
+
     public function getId(): int
     {
         return $this->id;

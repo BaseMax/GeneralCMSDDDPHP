@@ -13,7 +13,22 @@ class ContactUs extends Model
 
     public function __construct()
     {
+    }
 
+    public static function create(
+        string $first_name,
+        string $last_name,
+        string $email,
+        string $tel,
+        string $text
+    ): static {
+
+        return (new static())
+            ->setFirstName($first_name)
+            ->setLastName($last_name)
+            ->setEmail($email)
+            ->setTel($tel)
+            ->setText($text);
     }
 
     public function getId(): int

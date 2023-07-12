@@ -15,6 +15,21 @@ class SliderSlide extends Model
     {
     }
 
+    public static function create(
+        int $slider_position_id,
+        string $image,
+        string $title,
+        string $description,
+        string $link
+    ): static {
+        return (new static())
+            ->setSliderPositionId($slider_position_id)
+            ->setImage($image)
+            ->setTitle($title)
+            ->setDescription($description)
+            ->setLink($link);
+    }
+
     public function getId(): int
     {
         return $this->id;

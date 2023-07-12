@@ -10,7 +10,15 @@ class Faq extends Model
 
     public function __construct()
     {
+    }
 
+    public static function create(
+        string $question,
+        string $answer
+    ): static {
+        return (new static())
+            ->setQuestion($question)
+            ->setAnswer($answer);
     }
 
     public function getId(): int

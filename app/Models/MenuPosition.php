@@ -10,7 +10,15 @@ class MenuPosition extends Model
 
     public function __construct()
     {
+    }
 
+    public static function create(
+        string $name,
+        string $slug
+    ): static {
+        return (new static())
+            ->setName($name)
+            ->setSlug($slug);
     }
 
     public function getId(): int

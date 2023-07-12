@@ -9,7 +9,12 @@ class Tag extends Model
 
     public function __construct()
     {
+    }
 
+    public static function create(
+        string $text
+    ): static {
+        return (new static())->setText($text);
     }
 
     public function getId(): int

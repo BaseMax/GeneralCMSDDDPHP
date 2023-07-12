@@ -12,7 +12,19 @@ class MenuItem extends Model
 
     public function __construct()
     {
+    }
 
+    public static function create(
+        int $menu_position_id,
+        string $name,
+        string $link,
+        int $parent_id
+    ): static {
+        return (new static())
+            ->setMenuPositionId($menu_position_id)
+            ->setName($name)
+            ->setLink($link)
+            ->setParentId($parent_id);
     }
 
     public function getId(): int
@@ -63,5 +75,4 @@ class MenuItem extends Model
         $this->parent_id = $parent_id;
         return $this;
     }
-
 }

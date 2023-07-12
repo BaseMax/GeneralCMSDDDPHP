@@ -17,7 +17,25 @@ class Post extends Model
 
     public function __construct()
     {
+    }
 
+    public static function create(
+        string $title,
+        string $slug,
+        string $content,
+        string $fullcontent,
+        DateTime $createdat = (new DateTime())->format("Y-m-d H:i:s"),
+        DateTime $updatedat = (new DateTime())->format("Y-m-d H:i:s"),
+        int $author
+    ): static {
+        return (new static())
+            ->setTitle($title)
+            ->setSlug($slug)
+            ->setContent($content)
+            ->setFullContent($fullcontent)
+            ->setCreatedAt($createdat)
+            ->setUpdatedAt($updatedat)
+            ->setAuthor($author);
     }
 
     public function getId(): int

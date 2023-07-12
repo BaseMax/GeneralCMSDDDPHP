@@ -10,7 +10,15 @@ class PostTag extends Model
 
     public function __construct()
     {
+    }
 
+    public static function create(
+        int $post_id,
+        int $tag_id
+    ): static {
+        return (new static())
+            ->setPostId($post_id)
+            ->setTagId($tag_id);
     }
 
     public function getId(): int

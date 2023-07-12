@@ -21,7 +21,7 @@ class UserService extends Service
         ]);
 
         if ($user)
-            return User::create($user["email"], $user["password"], $user["username"], $user["firstname"], $user["lastname"]);
+            return User::create($user["email"], $user["password"], $user["username"], $user["firstname"], $user["lastname"], $user["rule_id"]);
 
         return false;
     }

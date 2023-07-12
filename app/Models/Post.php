@@ -24,9 +24,9 @@ class Post extends Model
         string $slug,
         string $content,
         string $fullcontent,
+        int $author,
         DateTime $createdat = (new DateTime())->format("Y-m-d H:i:s"),
-        DateTime $updatedat = (new DateTime())->format("Y-m-d H:i:s"),
-        int $author
+        DateTime $updatedat = (new DateTime())->format("Y-m-d H:i:s")
     ): static {
         return (new static())
             ->setTitle($title)

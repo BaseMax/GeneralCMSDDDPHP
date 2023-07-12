@@ -9,6 +9,7 @@ class User extends Model
     private string $username;
     private string $firstname;
     private string $lastname;
+    private int $rule_id;
 
     public function __construct()
     {
@@ -19,14 +20,27 @@ class User extends Model
         string $password,
         string $username,
         string $firstname,
-        string $lastname
+        string $lastname,
+        int $rule_id
     ): static {
         return (new static())
             ->setEmail($email)
             ->setPassword($password)
             ->setUserName($username)
             ->setFirstName($firstname)
-            ->setLastName($lastname);
+            ->setLastName($lastname)
+            ->setRuleId($rule_id);
+    }
+
+    public function getRuleId(): int
+    {
+        return $this->rule_id;
+    }
+
+    public function setRuleId(int $rule_id): self
+    {
+        $this->rule_id = $rule_id;
+        return $this;
     }
 
     public function getEmail(): string

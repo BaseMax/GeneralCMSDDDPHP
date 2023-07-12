@@ -3,6 +3,7 @@
 namespace CMS\Repositories;
 
 use CMS\Database\Config\Config;
+use CMS\Models\Post;
 use PDO;
 
 class Repository

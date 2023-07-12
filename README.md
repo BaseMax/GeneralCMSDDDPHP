@@ -46,7 +46,7 @@ The PHP RESTful service relies on the following dependencies:
 To set up the PHP RESTful service, follow these steps:
 
 - Clone the repository: `git clone https://github.com/BaseMax/GeneralCMSDDDPHP`
-- Install dependencies using Composer: `composer install`
+- Install dependencies using Composer: `composer update`
 - Set up the database and configure the connection details in the project's configuration file.
 - Run database migrations to create the required tables: `php migration.php`
 - Configure the web server to point to the project's root directory.

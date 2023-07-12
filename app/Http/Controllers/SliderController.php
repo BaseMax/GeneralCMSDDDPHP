@@ -11,4 +11,15 @@ class SliderController extends Controller
     {
         return json_encode((new SliderPositionService())->all());
     }
+
+    public function store(Request $request)
+    {
+        (new SliderPositionService())->create([
+            "name" => $request->postParams["name"],
+            "slug" => $request->postParams["slug"]
+        ]);
+        return json_encode([
+            "status" => "successful"
+        ]);
+    }
 }

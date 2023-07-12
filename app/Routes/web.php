@@ -19,5 +19,6 @@ return [
     ["DELETE", "/posts/{id:\d+}", [PostController::class, "destroy"]],
     ["GET", "/users/{id:\d+}/permission", [UserRuleController::class, "show"]],
     ["GET", "/permissions", [RuleController::class, "index"]],
-    ["GET", "/sliders", [SliderController::class, "index"]]
+    ["GET", "/sliders", [SliderController::class, "index"]],
+    ["POST", "sliders", [SliderController::class, "store"]]
 ];

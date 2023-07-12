@@ -1,6 +1,7 @@
 <?php if (!LOADED) exit;
 
 use CMS\Http\Controllers\AuthController;
+use CMS\Http\Controllers\CategoryController;
 use CMS\Http\Controllers\FaqController;
 use CMS\Http\Controllers\HomeController;
 use CMS\Http\Controllers\PostController;
@@ -28,5 +29,6 @@ return [
     ["POST", "sliderslides", [SliderSlideController::class, "store"]],
     ["GET", "/tags", [TagController::class, "index"]],
     ["POST", "tags", [TagController::class, "store"]],
-    ["GET", "/faq", [FaqController::class, "index"]]
+    ["GET", "/faq", [FaqController::class, "index"]],
+    ["GET", "/categories", [CategoryController::class, "index"]]
 ];

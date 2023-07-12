@@ -48,7 +48,7 @@ To set up the PHP RESTful service, follow these steps:
 - Clone the repository: `git clone https://github.com/BaseMax/GeneralCMSDDDPHP`
 - Install dependencies using Composer: `composer install`
 - Set up the database and configure the connection details in the project's configuration file.
-- Run database migrations to create the required tables: `php migrations/migrate.php`
+- Run database migrations to create the required tables: `php migration.php`
 - Configure the web server to point to the project's root directory.
 - Ensure that the web server has the necessary permissions to read and write files within the project directory.
 

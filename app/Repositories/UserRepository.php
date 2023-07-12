@@ -16,7 +16,7 @@ class UserRepository extends Repository
     {
     }
 
-    public function add(array $user): bool
+    public function add(array $user): string|false
     {
         $this->getDB()->beginTransaction();
 
@@ -35,7 +35,7 @@ class UserRepository extends Repository
         ]);
 
         $this->getDB()->commit();
-        return true;
+        return $this->getDB()->lastInsertId();
     }
 
     public function getTableName(): string

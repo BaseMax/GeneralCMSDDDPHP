@@ -2,8 +2,10 @@
 
 namespace CMS\Http\Controllers;
 
+use CMS\Facades\Cookie;
 use CMS\Facades\View;
 use CMS\Http\Request;
+use CMS\Services\UserService;
 
 class AuthController extends Controller
 {
@@ -19,6 +21,23 @@ class AuthController extends Controller
 
     public function store(Request $request)
     {
-        dd($request);
+        $userId = (new UserService())->add([
+            $request->postParams
+        ]);
+
+        Cookie::set($userId);
+        
+        return json_encode([
+            "status" => 1
+        ]);
+    }
+
+    public function logout(Request $request)
+    {
+        Cookie::delete($request);
+
+        return json_encode([
+            "status" => 1
+        ]);
     }
 }

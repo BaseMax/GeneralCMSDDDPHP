@@ -5,6 +5,7 @@ use CMS\Http\Controllers\HomeController;
 use CMS\Http\Controllers\PostController;
 use CMS\Http\Controllers\RuleController;
 use CMS\Http\Controllers\SliderController;
+use CMS\Http\Controllers\SliderSlideController;
 use CMS\Http\Controllers\UserRuleController;
 
 return [
@@ -20,5 +21,7 @@ return [
     ["GET", "/users/{id:\d+}/permission", [UserRuleController::class, "show"]],
     ["GET", "/permissions", [RuleController::class, "index"]],
     ["GET", "/sliders", [SliderController::class, "index"]],
-    ["POST", "sliders", [SliderController::class, "store"]]
+    ["POST", "sliders", [SliderController::class, "store"]],
+    ["GET", "/sliderslides", [SliderSlideController::class, "index"]],
+    ["POST", "sliderslides", [SliderSlideController::class, "store"]]
 ];

@@ -3,6 +3,7 @@
 namespace CMS\Repositories;
 
 use CMS\Models\User;
+use PDO;
 
 class UserRepository extends Repository
 {
@@ -12,8 +13,19 @@ class UserRepository extends Repository
         parent::__construct();
     }
 
-    public function find(int $id): User|bool
+    public function find(array $user): array|bool
     {
+        $stmt = $this->getDB()->prepare(
+            "SELECT * FROM users WHERE email = ?, password = ?"
+        );
+
+        $stmt->execute([
+            $user["email"],
+            $user["password"]
+        ]);
+
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+
     }
 
     public function add(array $user): string|false

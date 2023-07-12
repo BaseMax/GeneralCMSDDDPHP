@@ -40,4 +40,12 @@ class AuthController extends Controller
             "status" => 1
         ]);
     }
+
+    public function check(Request $request)
+    {
+        return (new UserService())->find([
+            "email" => $request->postParams["email"],
+            "password" => $request->postParams["password"]
+        ]);
+    }
 }

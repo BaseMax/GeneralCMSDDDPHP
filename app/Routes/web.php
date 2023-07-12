@@ -6,6 +6,7 @@ use CMS\Http\Controllers\PostController;
 use CMS\Http\Controllers\RuleController;
 use CMS\Http\Controllers\SliderController;
 use CMS\Http\Controllers\SliderSlideController;
+use CMS\Http\Controllers\TagController;
 use CMS\Http\Controllers\UserRuleController;
 
 return [
@@ -23,5 +24,7 @@ return [
     ["GET", "/sliders", [SliderController::class, "index"]],
     ["POST", "sliders", [SliderController::class, "store"]],
     ["GET", "/sliderslides", [SliderSlideController::class, "index"]],
-    ["POST", "sliderslides", [SliderSlideController::class, "store"]]
+    ["POST", "sliderslides", [SliderSlideController::class, "store"]],
+    ["GET", "/tags", [TagController::class, "index"]],
+    ["POST", "tags", [TagController::class, "store"]]
 ];

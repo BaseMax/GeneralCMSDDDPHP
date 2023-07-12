@@ -97,7 +97,7 @@ CREATE TABLE users (
   FOREIGN KEY (role_id) REFERENCES roles(id)
 );
 
-CREATE TABLE user_prems (
+CREATE TABLE roles (
   user_id INT,
   key VARCHAR(255),
   value TINYINT,

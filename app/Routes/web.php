@@ -10,5 +10,6 @@ return [
     ["GET", "/login", [AuthController::class, "login"]],
     ["POST", "/register", [AuthController::class, "store"]],
     ["POST", "/logout", [AuthController::class, "logout"]],
-    ["POST", "/login", [AuthController::class, "login"]]
+    ["POST", "/login", [AuthController::class, "login"]],
+    [""]
 ];

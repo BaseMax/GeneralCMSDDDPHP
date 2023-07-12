@@ -3,6 +3,8 @@
 use CMS\Http\Controllers\AuthController;
 use CMS\Http\Controllers\HomeController;
 use CMS\Http\Controllers\PostController;
+use CMS\Http\Controllers\RuleController;
+use CMS\Http\Controllers\SliderController;
 use CMS\Http\Controllers\UserRuleController;
 
 return [
@@ -15,5 +17,7 @@ return [
     ["GET", "/posts", [PostController::class, "index"]],
     ["POST", "/posts", [PostController::class, "store"]],
     ["DELETE", "/posts/{id:\d+}", [PostController::class, "destroy"]],
-    ["GET", "/users/{id:\d+}/permission", [UserRuleController::class, "show"]]
+    ["GET", "/users/{id:\d+}/permission", [UserRuleController::class, "show"]],
+    ["GET", "/permissions", [RuleController::class, "index"]],
+    ["GET", "/sliders", [SliderController::class, "index"]]
 ];

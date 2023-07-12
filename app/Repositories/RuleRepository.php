@@ -20,4 +20,15 @@ class RuleRepository extends Repository
         $stmt->execute([$id]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+
+    public function all(): array
+    {
+        $stmt = $this->getDB()->prepare(
+            "SELECT * FROM rules"
+        );
+
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }

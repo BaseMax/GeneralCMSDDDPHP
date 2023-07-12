@@ -15,7 +15,7 @@ class SliderSlideRepository extends Repository
     public function all(): array
     {
         $stmt = $this->getDB()->prepare(
-            "SELECT * FROM slider_slide"
+            "SELECT * FROM `slider_slide`;"
         );
 
         $stmt->execute();
@@ -26,7 +26,7 @@ class SliderSlideRepository extends Repository
     public function create(SliderSlide $slider): void
     {
         $stmt = $this->getDB()->prepare(
-            "INSERT INTO slider_slide (`slider_position_id`, `image`, `title`, `description`, `link`) VALUES (?, ?, ?, ?, ?)"
+            "INSERT INTO `slider_slide` (`slider_position_id`, `image`, `title`, `description`, `link`) VALUES (?, ?, ?, ?, ?);"
         );
 
         $stmt->execute([

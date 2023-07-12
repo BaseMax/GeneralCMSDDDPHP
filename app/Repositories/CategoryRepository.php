@@ -14,7 +14,7 @@ class CategoryRepository extends Repository
     public function all(): array
     {
         $stmt = $this->getDB()->prepare(
-            "SELECT * FROM categories"
+            "SELECT * FROM `categories`;"
         );
 
         $stmt->execute();

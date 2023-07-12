@@ -14,7 +14,7 @@ class PostRepository extends Repository
     public function all(): array|bool
     {
         $stmt = $this->getDB()->prepare(
-            "SELECT * FROM posts"
+            "SELECT * FROM `posts`;"
         );
 
         $stmt->execute();
@@ -27,7 +27,7 @@ class PostRepository extends Repository
         $this->getDB()->beginTransaction();
 
         $stmt = $this->getDB()->prepare(
-            "INSERT INTO posts (`title`, `slug`, `content`, `fullcontent`, `createdat`, `updatedat`) VALUES (?, ?, ?, ?, ?, ?);"
+            "INSERT INTO `posts` (`title`, `slug`, `content`, `fullcontent`, `createdat`, `updatedat`) VALUES (?, ?, ?, ?, ?, ?);"
         );
 
         $stmt->execute([
@@ -45,7 +45,7 @@ class PostRepository extends Repository
     public function delete(int $id): void
     {
         $stmt = $this->getDB()->prepare(
-            "DELETE FROM posts WHERE id = ?"
+            "DELETE FROM `posts` WHERE `id` = ?;"
         );
 
         $stmt->execute([

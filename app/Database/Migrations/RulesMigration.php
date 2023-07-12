@@ -42,7 +42,7 @@ class RulesMigration extends Migration
         // writer, user, admin
 
         $stmt = $this->getDB()->prepare(
-            "INSERT INTO " . $this->getTableName() . " (`value`) VALUES ('admin'), ('writer'), ('user');"
+            "INSERT INTO `" . $this->getTableName() . "` (`value`) VALUES ('admin'), ('writer'), ('user');"
         );
 
         $stmt->execute();

@@ -14,7 +14,7 @@ class FaqRepository extends Repository
     public function all(): array
     {
         $stmt = $this->getDB()->prepare(
-            "SELECT * FROM faq"
+            "SELECT * FROM `faq`;"
         );
 
         $stmt->execute();

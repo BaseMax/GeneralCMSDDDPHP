@@ -14,7 +14,7 @@ class RuleRepository extends Repository
     public function find(int $id): array
     {
         $stmt = $this->getDB()->prepare(
-            "SELECT * FROM rules WHERE id = ?"
+            "SELECT * FROM `rules` WHERE `id` = ?;"
         );
 
         $stmt->execute([$id]);
@@ -24,7 +24,7 @@ class RuleRepository extends Repository
     public function all(): array
     {
         $stmt = $this->getDB()->prepare(
-            "SELECT * FROM rules"
+            "SELECT * FROM `rules`;"
         );
 
         $stmt->execute();

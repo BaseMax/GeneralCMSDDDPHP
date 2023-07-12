@@ -16,7 +16,7 @@ class UserRepository extends Repository
     public function find(array $user): array|bool
     {
         $stmt = $this->getDB()->prepare(
-            "SELECT * FROM users WHERE email = ?, password = ?"
+            "SELECT * FROM `users` WHERE `email` = ?, `password` = ?;"
         );
 
         $stmt->execute([
@@ -33,8 +33,8 @@ class UserRepository extends Repository
         $this->getDB()->beginTransaction();
 
         $stmt = $this->getDB()->prepare(
-            "INSERT INTO " . $this->getTableName() . " (`username`, `hash_password`, `email`, `firstname`, `lastname`, `role_id`) 
-            VALUES (?, ?, ?, ?, ?, 3)
+            "INSERT INTO `" . $this->getTableName() . "` (`username`, `hash_password`, `email`, `firstname`, `lastname`, `role_id`) 
+            VALUES (?, ?, ?, ?, ?, 3);
             "
         );
 

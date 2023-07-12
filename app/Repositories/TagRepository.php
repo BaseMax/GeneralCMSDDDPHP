@@ -15,7 +15,7 @@ class TagRepository extends Repository
     public function all(): array
     {
         $stmt = $this->getDB()->prepare(
-            "SELECT * FROM tags"
+            "SELECT * FROM `tags`;"
         );
 
         $stmt->execute();
@@ -26,7 +26,7 @@ class TagRepository extends Repository
     public function create(Tag $tag): void
     {
         $stmt = $this->getDB()->prepare(
-            "INSERT INTO tags (`text`) VALUES (?)"
+            "INSERT INTO `tags` (`text`) VALUES (?);"
         );
 
         $stmt->execute();

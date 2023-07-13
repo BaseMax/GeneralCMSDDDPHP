@@ -224,11 +224,10 @@ CREATE TABLE post_categories (
 
 # Examples
 
-![Screenshot from 2023-07-10 05-34-24](https://github.com/BaseMax/GeneralCMSDDDPHP/assets/107758775/eeefac2a-d8b1-4425-9b36-955443755679)
+![Screenshot from 2023-07-10 05-34-24](screenshots/1.png)
 
-![Screenshot from 2023-07-10 05-34-09](https://github.com/BaseMax/GeneralCMSDDDPHP/assets/107758775/f85530df-70b4-4b63-b094-90b5dc44f2f4)
+![Screenshot from 2023-07-10 05-34-09](screenshots/2.png)
 
-![Screenshot from 2023-07-10 17-33-52](https://github.com/BaseMax/GeneralCMSDDDPHP/assets/107758775/c837cda2-61b1-411a-a024-426e372f733c)
-
+![Screenshot from 2023-07-10 17-33-52](screenshots/3.png)
 
 Copyright 2023, Max Base

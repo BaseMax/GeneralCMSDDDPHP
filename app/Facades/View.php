@@ -9,6 +9,7 @@ class View extends Facade
 {
     private Environment $twig;
     private FilesystemLoader $loader;
+
     public function __construct(FilesystemLoader $loader)
     {
         $this->loader = $loader;
